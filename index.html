@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 Grand Prix | Claymorphic Edition</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Titillium+Web:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="f1-clay-bg">
+
+    <nav class="navbar navbar-expand-lg sticky-top clay-nav mx-3 mt-3">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold f1-red f1-title" href="#">FORMULA 1®</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#f1Nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="f1Nav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link fw-bold" href="#standings">Standings</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold" href="#gallery">Teams</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-f1 ms-lg-3" data-bs-toggle="offcanvas" data-bs-target="#calendar">Race Calendar</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-wrapper px-3 mt-4">
+        <div class="container-fluid clay-card overflow-hidden p-0 position-relative hero-main-container">
+            <div class="row g-0 h-100">
+                <div class="col-lg-5 d-flex flex-column justify-content-center p-5 z-2 position-relative">
+                    <h6 class="f1-red fw-bold tracking-widest mb-3">ROUND 04 - SILVERSTONE, UK</h6>
+                    <h1 class="display-1 fw-black f1-title mb-4">DRIVE TO<br><span class="f1-red">SURVIVE</span></h1>
+                    <p class="lead text-dark mb-4 fw-bold">Experience the 2026 Power Unit Revolution. Aerodynamics. Precision. Speed.</p>
+                    
+                    <div class="d-flex gap-3 mb-5">
+                        <button class="btn btn-f1 btn-lg shadow-lg">LIVE TELEMETRY</button>
+                        <button class="btn btn-clay-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#safetyModal">SAFETY PROTOCOL</button>
+                    </div>
+
+                    <div class="clay-card p-4 bg-white-50 w-100">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-bold f1-title small">HYBRID DEPLOYMENT</span>
+                            <span class="f1-red fw-bold f1-title small">92%</span>
+                        </div>
+                        <div class="progress rounded-pill" style="height: 12px; background: #beccd9;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 d-flex flex-column gap-4">
+    <div class="hero-sub-card clay-card flip-container" style="height: 60%; perspective: 1500px;">
+        <div class="flip-images-inner" id="imageFlipper">
+            <div class="flip-card front">
+                <img src="f1drivers.jpg" alt="F1 Racing Front" class="hero-img">
+            </div>
+            <div class="flip-card back">
+                <img src="https://i.pinimg.com/736x/c3/19/53/c31953848e1b163f18f7c0ec3c32f0df.jpg" alt="F1 Racing Back" class="hero-img">
+            </div>
+            
+        </div>
+
+        <button class="flip-arrow left" onclick="flipImage()">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="white" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button class="flip-arrow right" onclick="flipImage()">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="white" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+
+        <div class="glass-telemetry">
+            <div class="row text-center g-0">
+                <div class="col-6 border-end border-white-50">
+                    <small class="text-white-50 d-block small-label">SPEED</small>
+                    <span class="speed-indicator">220</span> <span class="text-white-50 kmh">KM/H</span>
+                </div>
+                <div class="col-6">
+                    <small class="text-white-50 d-block small-label">GEAR</small>
+                    <span class="speed-indicator f1-red">7</span>
+                </div>
+            </div>
+            <div class="mt-2 badge bg-danger w-100 py-1 pulse drs-badge">DRS ENABLED</div>
+        </div>
+    </div>
+
+    <div class="hero-sub-card clay-card overflow-hidden" style="height: 40%;">
+        <img src="image copy.png" alt="Second Visual" class="hero-img">
+        <div class="position-absolute bottom-0 start-0 p-4">
+            <h3 class="f1-title text-white mb-0">F <span class="f1-red">1</span></h3>
+        </div>
+    </div>
+</div>
+
+<script>
+    function flipImage() {
+        const flipper = document.getElementById('imageFlipper');
+        flipper.classList.toggle('is-flipped');
+    }
+</script>
+</div>
+            
+        
+    </section>
+
+    <main class="container my-5">
+        
+        <h2 class="text-center f1-title mb-5" id="standings">MEMBERSHIP ACCESS</h2>
+        <div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="card h-100 clay-card text-center p-4">
+            <h4 class="f1-title">FAN ZONE</h4>
+            <h1 class="f1-red fw-bold">$0</h1>
+            <p>Basic stats and news updates.</p>
+            <button class="btn btn-f1 w-100" onclick="toggleComparison()">COMPARE PLAN</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 clay-card text-center p-4 featured-border">
+            <h4 class="f1-title">PADDOCK CLUB</h4>
+            <h1 class="f1-red fw-bold">$25</h1>
+            <p>Exclusive pit-lane camera access.</p>
+            <button class="btn btn-f1 w-100" onclick="toggleComparison()">COMPARE PLAN</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 clay-card text-center p-4">
+            <h4 class="f1-title">LEGEND</h4>
+            <h1 class="f1-red fw-bold">$99</h1>
+            <p>VIP race tickets and meet & greet.</p>
+            <button class="btn btn-f1 w-100" onclick="toggleComparison()">COMPARE PLAN</button>
+        </div>
+    </div>
+</div>
+
+<section id="comparison-section" class="clay-card p-5 mb-5 d-none">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="f1-title mb-0">TIER COMPARISON</h2>
+        <button class="btn-close" onclick="toggleComparison()"></button>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-borderless align-middle text-center comparison-table">
+            <thead>
+                <tr class="f1-title border-bottom border-2">
+                    <th class="text-start">FEATURES</th>
+                    <th>FAN ZONE</th>
+                    <th class="f1-red">PADDOCK</th>
+                    <th>LEGEND</th>
+                </tr>
+            </thead>
+            <tbody class="fw-bold">
+                <tr>
+                    <td class="text-start">Live Timing Data</td>
+                    <td><span class="text-success">✔</span></td>
+                    <td><span class="text-success">✔</span></td>
+                    <td><span class="text-success">✔</span></td>
+                </tr>
+                <tr>
+                    <td class="text-start">Pit-Lane Camera Access</td>
+                    <td><span class="text-muted">✖</span></td>
+                    <td><span class="text-success">✔</span></td>
+                    <td><span class="text-success">✔</span></td>
+                </tr>
+                <tr>
+                    <td class="text-start">On-Board Driver Feeds</td>
+                    <td><span class="text-muted">✖</span></td>
+                    <td><span class="text-success">✔</span></td>
+                    <td><span class="text-success">✔</span></td>
+                </tr>
+                <tr>
+                    <td class="text-start">VIP Meet & Greet</td>
+                    <td><span class="text-muted">✖</span></td>
+                    <td><span class="text-muted">✖</span></td>
+                    <td><span class="text-success">✔</span></td>
+                </tr>
+                <tr>
+                    <td class="text-start">Race Weekend Hospitality</td>
+                    <td><span class="text-muted">✖</span></td>
+                    <td><span class="text-muted">✖</span></td>
+                    <td><span class="text-success">✔</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script>
+function toggleComparison() {
+    const section = document.getElementById('comparison-section');
+    section.classList.toggle('d-none');
+    if(!section.classList.contains('d-none')) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
+
+        
+
+        <h2 class="f1-title mb-4" id="gallery">THE CONSTRUCTORS</h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-3">
+                <div class="clay-card p-3 text-center">
+                    <img src="ferrari.jpg" class="img-fluid rounded-4 mb-3" alt="Red Car">
+                    <h5 class="fw-bold">FERRARI</h5>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="clay-card p-3 text-center">
+                    <img src="https://i.pinimg.com/736x/b4/72/f7/b472f720db1e5040dd6cb77667140074.jpg" class="img-fluid rounded-4 mb-3" alt="Blue Car">
+                    <h5 class="fw-bold">RED BULL</h5>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="clay-card p-3 text-center">
+                    <img src="https://i.pinimg.com/736x/a2/a9/87/a2a9877b5e496698dacdcb5cdd8a3e17.jpg" class="img-fluid rounded-4 mb-3" alt="Silver Car">
+                    <h5 class="fw-bold">MERCEDES</h5>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="clay-card p-3 text-center">
+                    <img src="mclaren.jpg" class="img-fluid rounded-4 mb-3" alt="Orange Car">
+                    <h5 class="fw-bold">McLAREN</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="clay-card p-5 mb-5">
+            <h2 class="f1-title mb-4">FAN REGISTRATION</h2>
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Driver Preference</label>
+                    <input type="text" class="form-control clay-input" placeholder="e.g. Lewis Hamilton" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Email Address</label>
+                    <input type="email" class="form-control clay-input" required>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="v" required>
+                        <label class="form-check-label" for="v">I agree to the FIA Fan Terms</label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-f1 btn-lg" type="submit">JOIN THE GRID</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div class="offcanvas offcanvas-end clay-card m-3" id="calendar">
+        <div class="offcanvas-header"><h5 class="f1-title">2026 CALENDAR</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button></div>
+        <div class="offcanvas-body">
+            <div class="alert alert-dark clay-card mb-3">🇲🇨 Monaco GP - May 24</div>
+            <div class="alert alert-dark clay-card mb-3">🇬🇧 Silverstone - July 05</div>
+            <div class="alert alert-dark clay-card mb-3">🇮🇹 Monza GP - Sept 06</div>
+            <div class="alert alert-dark clay-card mb-3">🇺🇸 Las Vegas GP - Sept 21</div>
+            <div class="alert alert-dark clay-card mb-3">🇸🇬 Singapore GP - Oct 9</div>
+            <div class="alert alert-dark clay-card mb-3">🇦🇪 Dubai GP - Oct 24</div>
+
+
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="safetyModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content clay-card p-4 border-0">
+                <h4 class="f1-title f1-red">SAFETY FIRST</h4>
+                <p>The Halo system and HANS device are mandatory for all drivers. Safety is our priority.</p>
+                <button class="btn btn-dark rounded-pill" data-bs-dismiss="modal">UNDERSTOOD</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-4 clay-nav mx-3 mb-3 text-center">
+        <span class="text-muted fw-bold">© 2026 FORMULA 1 WORLD CHAMPIONSHIP. POWERED BY BOOTSTRAP 5.3</span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

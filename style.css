@@ -1,0 +1,291 @@
+/* Color Palette */
+:root {
+    --f1-red: #e10600;
+    --clay-bg: #e0e5ec;
+    --clay-shadow: #bcbfc5;
+}
+
+body {
+    background-color: var(--clay-bg);
+    font-family: 'Titillium Web', sans-serif;
+    color: #333;
+}
+
+.f1-title {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.f1-red { color: var(--f1-red) !important; }
+
+/* Claymorphism Core */
+.clay-card, .clay-nav {
+    background: var(--clay-bg);
+    border: none;
+    border-radius: 40px !important;
+    box-shadow: 20px 20px 40px var(--clay-shadow), 
+                -20px -20px 40px #ffffff,
+                inset 4px 4px 10px var(--clay-shadow), 
+                inset -4px -4px 10px #ffffff;
+}
+
+/* BIG HERO STYLING */
+.hero-main-container {
+    overflow: visible !important; 
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px; /* Matching your clay-card radius */
+}
+
+.glass-telemetry {
+    position: absolute;
+    /* Move it up slightly so it's not hugging the very bottom edge */
+    bottom: 60px; 
+    right: 50px; 
+    width: 360px;
+    
+    /* Improved Glassmorphism from your upload */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* Smoother corners and border */
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    
+    padding: 25px;
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+/* Mobile adjust for Hero */
+@media (max-width: 991px) {
+    .hero-main-container { height: auto; }
+    .hero-img { height: 350px; }
+    .glass-telemetry { position: static; width: 100%; margin: 20px 0; left: 0; }
+}
+
+.speed-indicator {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem; /* Slightly larger like your image */
+    font-weight: 900;
+    line-height: 1;
+    color: white;
+}
+
+/* Buttons and Inputs */
+.btn-f1 {
+    background-color: var(--f1-red);
+    color: white;
+    border-radius: 18px;
+    padding: 12px 30px;
+    font-weight: bold;
+    border: none;
+    box-shadow: 5px 5px 15px var(--clay-shadow);
+}
+
+.btn-f1:hover {
+    background-color: #b80500;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.clay-input {
+    border: none;
+    border-radius: 15px;
+    background: var(--clay-bg);
+    box-shadow: inset 6px 6px 12px var(--clay-shadow), 
+                inset -6px -6px 12px #ffffff;
+}
+
+.featured-border {
+    border: 4px solid var(--f1-red) !important;
+}
+
+/* Pulse Animation */
+.pulse {
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(0.98); opacity: 0.9; }
+    50% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.98); opacity: 0.9; }
+}
+
+/* --- ENHANCED CARD HOVER EFFECTS --- */
+
+/* 1. Generic Clay Card Hover (Lifting Effect) */
+.clay-card {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smooth "racing" transition */
+    cursor: pointer;
+}
+
+.clay-card:hover {
+    transform: translateY(-12px) scale(1.02); /* Card lifts up */
+    box-shadow: 25px 25px 50px #b1b4b9, 
+                -25px -25px 50px #ffffff; /* Shadows soften and spread as it lifts */
+}
+
+/* 2. Team Gallery Card - Image Zoom & Glow */
+.team-card {
+    overflow: hidden; /* Keeps the zoomed image inside the rounded corners */
+}
+
+.team-card .team-img {
+    transition: transform 0.6s ease;
+}
+
+.team-card:hover .team-img {
+    transform: scale(1.1); /* Zooms into the F1 car */
+}
+
+.team-card:hover {
+    border: 2px solid var(--f1-red) !important; /* Adds a red racing border on hover */
+    box-shadow: 0px 0px 20px rgba(225, 6, 0, 0.3); /* Subtle F1 Red glow */
+}
+
+/* 3. Pricing Card "Press" Effect */
+/* Makes the card look like it's being pushed into the clay when clicked */
+.clay-card:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: inset 10px 10px 20px var(--clay-shadow), 
+                inset -10px -10px 20px #ffffff !important;
+}
+
+/* 4. Button Hover Enhancement */
+.btn-f1 {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-f1:hover {
+    background-color: #000; /* Changes to black like a tire */
+    color: var(--f1-red);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px; /* Aggressive text expansion */
+}
+
+/* Hero Grid Layout */
+.hero-sub-card {
+    position: relative;
+    width: 100%;
+    border-radius: 40px !important;
+    overflow: hidden;
+}
+
+/* 3D Flip Mechanics */
+.flip-images-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.flip-images-inner.is-flipped {
+    transform: rotateY(-180deg);
+}
+
+.flip-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card.back {
+    transform: rotateY(180deg);
+}
+
+/* Refined Glass Telemetry for smaller card */
+.glass-telemetry {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 280px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    z-index: 40;
+}
+
+.speed-indicator {
+    font-size: 2.2rem !important; /* Slightly smaller to fit card */
+}
+
+.small-label { font-size: 0.6rem; letter-spacing: 1px; }
+.kmh { font-size: 0.7rem; }
+.drs-badge { font-size: 0.65rem; font-family: 'Orbitron'; }
+
+/* Navigation Arrows */
+.flip-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.flip-arrow:hover { background: var(--f1-red); }
+.flip-arrow.left { left: 15px; }
+.flip-arrow.right { right: 15px; }
+
+/* Comparison Table Styling */
+.comparison-table {
+    background: transparent;
+}
+
+.comparison-table thead th {
+    padding-bottom: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+}
+
+.comparison-table tbody td {
+    padding: 20px 0;
+    color: #444;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover effect for table rows */
+.comparison-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    transition: 0.3s ease;
+}
+
+/* Close button style for clay-card */
+.btn-close {
+    background-color: var(--clay-bg);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 4px 4px 8px var(--clay-shadow), 
+                -4px -4px 8px #ffffff;
+    opacity: 1;
+}
